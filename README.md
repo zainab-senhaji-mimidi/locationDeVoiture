@@ -16,3 +16,6 @@ Un tableau de bord pour suivre les réservations en temps réel.
 Un système de gestion de la flotte de véhicules (ajout, suppression, modification des véhicules).
 Un accès aux informations clients et à l'historique des réservations.
 Des rapports sur les performances de la plateforme (nombre de réservations, taux de disponibilité, etc.).
+
+
+Lien Formulaire : https://forms.gle/PoeUF5xRrxvxfE1o9
