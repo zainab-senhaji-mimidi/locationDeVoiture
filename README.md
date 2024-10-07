@@ -17,4 +17,4 @@ Un système de gestion de la flotte de véhicules (ajout, suppression, modificat
 Un accès aux informations clients et à l'historique des réservations.
 Des rapports sur les performances de la plateforme (nombre de réservations, taux de disponibilité, etc.).
 
-<p><a href="[https://www.example.com](https://forms.gle/PoeUF5xRrxvxfE1o9)">Lien Formulaire</a></p>
+<p><a href="https://forms.gle/PoeUF5xRrxvxfE1o9">Lien Formulaire</a></p>
