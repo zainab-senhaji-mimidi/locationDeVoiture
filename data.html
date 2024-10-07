@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de Véhicules</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS si nécessaire -->
+</head>
+<body>
+    <header>
+        <h1>Location de Véhicules</h1>
+    </header>
+
+    <main>
+        <section id="vehicle-search">
+            <h2>Recherche de Véhicules</h2>
+            <form id="search-form">
+                <label for="vehicle-type">Type de véhicule:</label>
+                <select id="vehicle-type" name="vehicle-type">
+                    <option value="compact">Compact</option>
+                    <option value="suv">SUV</option>
+                    <option value="berline">Berline</option>
+                    <option value="monospace">Monospace</option>
+                </select>
+
+                <label for="rental-duration">Durée de location:</label>
+                <input type="number" id="rental-duration" name="rental-duration" min="1" placeholder="Jours">
+
+                <label for="options">Options supplémentaires:</label>
+                <div>
+                    <input type="checkbox" id="insurance" name="options" value="assurance">
+                    <label for="insurance">Assurance</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gps" name="options" value="gps">
+                    <label for="gps">GPS</label>
+                </div>
+
+                <button type="submit">Rechercher</button>
+            </form>
+        </section>
+
+        <section id="available-vehicles">
+            <h2>Véhicules Disponibles</h2>
+            <ul id="vehicle-list">
+                <!-- Liste des véhicules sera injectée ici via JavaScript -->
+            </ul>
+        </section>
+
+        <section id="reservation-management">
+            <h2>Gestion des Réservations</h2>
+            <form id="reservation-form">
+                <label for="vehicle-id">ID du véhicule:</label>
+                <input type="text" id="vehicle-id" name="vehicle-id" required>
+
+                <label for="customer-name">Nom du client:</label>
+                <input type="text" id="customer-name" name="customer-name" required>
+
+                <button type="submit">Créer Réservation</button>
+                <button type="button" id="cancel-reservation">Annuler Réservation</button>
+            </form>
+        </section>
+
+        <section id="admin-dashboard">
+            <h2>Espace Administrateur</h2>
+            <button id="manage-fleet">Gérer la Flotte de Véhicules</button>
+            <button id="view-reports">Voir les Rapports</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Location de Véhicules. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript si nécessaire -->
+</body>
+</html>
