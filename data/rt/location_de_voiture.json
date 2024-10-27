@@ -1,0 +1,119 @@
+{
+    "o:label": "location de voiture",
+    "o:resource_template_property": [
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
+            "vocabulary_label": "Dublin Core",
+            "local_name": "title",
+            "label": "Title"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/purl.org\/dc\/terms\/",
+            "vocabulary_label": "Dublin Core",
+            "local_name": "description",
+            "label": "Description"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "Nom",
+            "label": "Nom"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "Prenom",
+            "label": "Pr\u00e9nom"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "http:\/\/xmlns.com\/foaf\/0.1\/",
+            "vocabulary_label": "Friend of a Friend",
+            "local_name": "mbox",
+            "label": "personal mailbox"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "DateReservation",
+            "label": "Date de r\u00e9servation"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "HeureReservation",
+            "label": "Heure de r\u00e9servation"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "TypeVehicule",
+            "label": "Type de v\u00e9hicule"
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+            "vocabulary_label": "locationDeVoiture",
+            "local_name": "DureeLocation",
+            "label": "Dur\u00e9e de location"
+        }
+    ],
+    "o:resource_class": {
+        "vocabulary_namespace_uri": "https:\/\/alt-company.com\/alt-reservation#",
+        "vocabulary_label": "locationDeVoiture",
+        "local_name": "Reservation",
+        "label": "R\u00e9servation de v\u00e9hicule"
+    }
+}
