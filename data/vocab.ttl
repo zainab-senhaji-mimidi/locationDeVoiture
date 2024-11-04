@@ -8,50 +8,64 @@
     dcterms:title "Système de gestion des réservations de véhicules" ;
     dcterms:description "Cette ontologie modélise les informations liées à la soumission et à la gestion des réservations de véhicules." .
 
-# Classes
-alt:Reservation a rdfs:Class ;
-    rdfs:label "Réservation de véhicule" ;
-    rdfs:comment "Représente une réservation pour un véhicule." .
+# Classes supplémentaires
+alt:Vehicule a rdfs:Class ;
+    rdfs:label "Véhicule" ;
+    rdfs:comment "Représente un véhicule pouvant être réservé." .
 
-# Propriétés
-alt:Nom a rdf:Property ;
-    rdfs:label "Nom" ;
-    rdfs:comment "Le nom de la personne ayant effectué la réservation." ;
-    rdfs:domain alt:Reservation ;
+alt:Client a rdfs:Class ;
+    rdfs:label "Client" ;
+    rdfs:comment "Représente un client qui effectue une réservation." .
+
+alt:Agence a rdfs:Class ;
+    rdfs:label "Agence de location" ;
+    rdfs:comment "Représente une agence de location de véhicules." .
+
+# Nouvelles propriétés pour les classes
+alt:Marque a rdf:Property ;
+    rdfs:label "Marque" ;
+    rdfs:comment "La marque du véhicule." ;
+    rdfs:domain alt:Vehicule ;
     rdfs:range xsd:string .
 
-alt:Prenom a rdf:Property ;
-    rdfs:label "Prénom" ;
-    rdfs:comment "Le prénom de la personne ayant effectué la réservation." ;
-    rdfs:domain alt:Reservation ;
+alt:Modele a rdf:Property ;
+    rdfs:label "Modèle" ;
+    rdfs:comment "Le modèle du véhicule." ;
+    rdfs:domain alt:Vehicule ;
     rdfs:range xsd:string .
 
-alt:Email a rdf:Property ;
-    rdfs:label "Adresse électronique" ;
-    rdfs:comment "L'adresse email de la personne ayant effectué la réservation." ;
-    rdfs:domain alt:Reservation ;
+alt:Immatriculation a rdf:Property ;
+    rdfs:label "Immatriculation" ;
+    rdfs:comment "Le numéro d'immatriculation du véhicule." ;
+    rdfs:domain alt:Vehicule ;
     rdfs:range xsd:string .
 
-alt:DateReservation a rdf:Property ;
-    rdfs:label "Date de réservation" ;
-    rdfs:comment "La date à laquelle la réservation a été effectuée." ;
-    rdfs:domain alt:Reservation ;
-    rdfs:range xsd:date .
-
-alt:HeureReservation a rdf:Property ;
-    rdfs:label "Heure de réservation" ;
-    rdfs:comment "L'heure à laquelle la réservation a été effectuée." ;
-    rdfs:domain alt:Reservation ;
-    rdfs:range xsd:time .
-
-alt:TypeVehicule a rdf:Property ;
-    rdfs:label "Type de véhicule" ;
-    rdfs:comment "Le type de véhicule réservé." ;
-    rdfs:domain alt:Reservation ;
+alt:AdresseAgence a rdf:Property ;
+    rdfs:label "Adresse de l'agence" ;
+    rdfs:comment "L'adresse de l'agence de location." ;
+    rdfs:domain alt:Agence ;
     rdfs:range xsd:string .
 
-alt:DureeLocation a rdf:Property ;
-    rdfs:label "Durée de location" ;
-    rdfs:comment "La durée pour laquelle le véhicule est réservé." ;
+alt:TelephoneClient a rdf:Property ;
+    rdfs:label "Téléphone du client" ;
+    rdfs:comment "Le numéro de téléphone du client." ;
+    rdfs:domain alt:Client ;
+    rdfs:range xsd:string .
+
+alt:ClientReservation a rdf:Property ;
+    rdfs:label "Client de la réservation" ;
+    rdfs:comment "Référence au client qui a effectué la réservation." ;
     rdfs:domain alt:Reservation ;
-    rdfs:range xsd:duration .
+    rdfs:range alt:Client .
+
+alt:VehiculeReservation a rdf:Property ;
+    rdfs:label "Véhicule réservé" ;
+    rdfs:comment "Référence au véhicule qui a été réservé." ;
+    rdfs:domain alt:Reservation ;
+    rdfs:range alt:Vehicule .
+
+alt:AgenceReservation a rdf:Property ;
+    rdfs:label "Agence de réservation" ;
+    rdfs:comment "Référence à l'agence où la réservation a été faite." ;
+    rdfs:domain alt:Reservation ;
+    rdfs:range alt:Agence .
