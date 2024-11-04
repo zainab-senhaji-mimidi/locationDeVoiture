@@ -1,0 +1,38 @@
+classDiagram
+    %% Définition des classes
+    class Vehicule {
+        +String Marque
+        +String Modele
+        +String Immatriculation
+    }
+    
+    class Client {
+        +String TelephoneClient
+    }
+    
+    class Agence {
+        +String AdresseAgence
+    }
+    
+    class Reservation {
+        +Client ClientReservation
+        +Vehicule VehiculeReservation
+        +Agence AgenceReservation
+    }
+
+    %% Définition des relations avec les cardinalités
+    Client "1" --> "0..*" Reservation : effectue
+    Vehicule "1" --> "0..*" Reservation : est réservé dans
+    Agence "1" --> "0..*" Reservation : gère
+
+    %% Notes explicatives
+    note for Vehicule "Un véhicule pouvant être réservé dans une agence."
+    note for Client "Un client qui effectue une ou plusieurs réservations."
+    note for Agence "Une agence qui gère les réservations de véhicules."
+    note for Reservation "Une réservation contenant les informations du client, du véhicule et de l'agence."
+
+    %% Style des classes
+    style Vehicule fill:#f9f,stroke:#333,stroke-width:4px
+    style Client fill:#f9f,stroke:#333,stroke-width:4px
+    style Agence fill:#263,stroke:#66f,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
+    style Reservation fill:#ffa,stroke:#333,stroke-width:4px
