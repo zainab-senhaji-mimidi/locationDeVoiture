@@ -1,38 +1,51 @@
-classDiagram
-    %% Définition des classes
-    class Vehicule {
-        +String Marque
-        +String Modele
-        +String Immatriculation
-    }
-    
-    class Client {
-        +String TelephoneClient
-    }
-    
-    class Agence {
-        +String AdresseAgence
-    }
-    
-    class Reservation {
-        +Client ClientReservation
-        +Vehicule VehiculeReservation
-        +Agence AgenceReservation
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramme de Classe Mermaid Dynamique</title>
+    <script type="module">
+        import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+        mermaid.initialize({ startOnLoad: false });
+        window.mermaid = mermaid;
+    </script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
 
-    %% Définition des relations avec les cardinalités
-    Client "1" --> "0..*" Reservation : effectue
-    Vehicule "1" --> "0..*" Reservation : est réservé dans
-    Agence "1" --> "0..*" Reservation : gère
+<div class="mermaid" id="classDiagram"></div>
+<script>
+const apiUrl = "https://api.github.com/repos/zainab-senhaji-mimidi/locationDeVoiture/contents/data/rt"; // Votre lien API GitHub
+let mermaidText = "classDiagram\n";
 
-    %% Notes explicatives
-    note for Vehicule "Un véhicule pouvant être réservé dans une agence."
-    note for Client "Un client qui effectue une ou plusieurs réservations."
-    note for Agence "Une agence qui gère les réservations de véhicules."
-    note for Reservation "Une réservation contenant les informations du client, du véhicule et de l'agence."
+d3.json(apiUrl)
+    .then(files => {
+        const jsonFiles = files.filter(file => file.name.endsWith(".json"));
+        const filePromises = jsonFiles.map(file => d3.json(file.download_url));
+        Promise.all(filePromises)
+            .then(fileContents => {
+                fileContents.forEach(data => {
+                    const className = data['o:label'].replace(/\s+/g, "_");
+                    mermaidText += `class ${className} {\n`;
+                    const properties = data["o:resource_template_property"];
+                    properties.forEach(prop => {
+                        const label = prop.label.replace(/\s+/g, "_");
+                        const type = "String"; // Vous pouvez adapter ce type selon vos besoins
+                        mermaidText += `    +${type} ${label}\n`;
+                    });
+                    mermaidText += "}\n";
+                });
+                document.getElementById("classDiagram").innerHTML = mermaidText;
+                mermaid.init(undefined, document.querySelectorAll(".mermaid"));
+            })
+            .catch(error => {
+                console.log("Erreur lors de la récupération des données des fichiers JSON :", error);
+            });
+    })
+    .catch(error => {
+        console.log("Erreur lors de la récupération des fichiers depuis l'API GitHub :", error);
+    });
+</script>
 
-    %% Style des classes
-    style Vehicule fill:#f9f,stroke:#333,stroke-width:4px
-    style Client fill:#f9f,stroke:#333,stroke-width:4px
-    style Agence fill:#263,stroke:#66f,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
-    style Reservation fill:#ffa,stroke:#333,stroke-width:4px
+</body>
+</html>
