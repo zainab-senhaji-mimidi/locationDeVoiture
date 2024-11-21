@@ -1,0 +1,51 @@
+{
+    "o:label": "Agence de location",
+    "o:resource_template_property": [
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https://alt-company.com/alt-reservation#",
+            "vocabulary_label": "alt-reservation",
+            "local_name": "NomAgence",
+            "label": "Nom de l'agence",
+            "comment": "Le nom de l'agence de location."
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https://alt-company.com/alt-reservation#",
+            "vocabulary_label": "alt-reservation",
+            "local_name": "AdresseAgence",
+            "label": "Adresse de l'agence",
+            "comment": "L'adresse de l'agence de location."
+        },
+        {
+            "o:alternate_label": null,
+            "o:alternate_comment": null,
+            "o:is_required": false,
+            "o:is_private": false,
+            "o:default_lang": null,
+            "data_types": [],
+            "vocabulary_namespace_uri": "https://alt-company.com/alt-reservation#",
+            "vocabulary_label": "alt-reservation",
+            "local_name": "TelephoneAgence",
+            "label": "Téléphone de l'agence",
+            "comment": "Le numéro de téléphone de l'agence."
+        }
+    ],
+    "o:resource_class": {
+        "vocabulary_namespace_uri": "https://alt-company.com/alt-reservation#",
+        "vocabulary_label": "alt-reservation",
+        "local_name": "Agence",
+        "label": "Agence de location",
+        "comment": "Représente une agence de location de véhicules."
+    }
+}
